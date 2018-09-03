@@ -9,8 +9,6 @@ LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
 int pos;    // position of next write
 int count;  // number of characters on the LCD
 
-void space(char *);
-
 void setup() {
     // set up the LCD's number of columns and rows:
     lcd.begin(16, 2);
@@ -137,10 +135,3 @@ void loop() {
     Serial.print("\n\n");   // just for aesthetics
   }
 }
-
-
-
-void space(char *str){
-    
-}
-
