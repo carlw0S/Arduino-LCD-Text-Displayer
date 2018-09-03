@@ -1,4 +1,3 @@
-// include the library code:
 #include <LiquidCrystal.h>
 
 // initialize the library by associating any needed LCD interface pin
@@ -10,17 +9,14 @@ int pos;    // position of next write
 int count;  // number of characters on the LCD
 
 void setup() {
-    // set up the LCD's number of columns and rows:
     lcd.begin(16, 2);
-    // initialize the serial communications:
     Serial.begin(9600);
-    
-    lcd.print("Escribe algo ;)");
+    lcd.print("Write something ;)");
     lcd.blink();
-  
 }
 
 void loop() {
+
   // when characters arrive over the serial port...
   if (Serial.available()) {
 
@@ -60,7 +56,7 @@ void loop() {
         if(count == 15 || count == 55)
           lcd.autoscroll();
           
-        // 40 is the max length when scrolling (I guess the "inner resolution" is 40x2) -- if the right border is reached, change to the other row
+        // 40 is the max length when scrolling (I guess the "internal resolution" is 40x2) -- if the right border is reached, change to the other row
         if(count == 40 || count == 80){
   
           lcd.noBlink();
@@ -130,7 +126,7 @@ void loop() {
     else
       lcd.setCursor(0,1);
       
-    lcd.print("Enga sigue :D");
+    lcd.print("Keep going :D");
     
     Serial.print("\n\n");   // just for aesthetics
   }
